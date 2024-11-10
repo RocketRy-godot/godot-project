@@ -6,15 +6,16 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(217.5, 149.865)
-scale = Vector2(14.5937, 10.3666)
+position = Vector2(217.5, 271)
+scale = Vector2(14.5937, 17.9375)
 texture = ExtResource("1_bguaw")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 394.0
-offset_top = 87.0
-offset_right = 622.0
-offset_bottom = 208.0
+offset_left = 399.0
+offset_top = 84.0
+offset_right = 659.0
+offset_bottom = 230.0
 text = "T U R T L E
 pray for ur life
-hes s t r o n g"
+hes s t r o n g
+but..... I AM STRONGGEEERR!!"
