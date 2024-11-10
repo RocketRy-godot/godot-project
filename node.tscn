@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsy8fix0m2mh3"]
+[gd_scene load_steps=2 format=3 uid="uid://ccumnmh08k3hl"]
 
 [ext_resource type="Texture2D" uid="uid://ctj7x8q1f37m" path="res://Jump (32x32).png" id="1_bguaw"]
 
@@ -9,3 +9,12 @@ texture_filter = 1
 position = Vector2(217.5, 149.865)
 scale = Vector2(14.5937, 10.3666)
 texture = ExtResource("1_bguaw")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 394.0
+offset_top = 87.0
+offset_right = 622.0
+offset_bottom = 208.0
+text = "T U R T L E
+pray for ur life
+hes s t r o n g"
