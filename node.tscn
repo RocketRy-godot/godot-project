@@ -1,23 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccumnmh08k3hl"]
+[gd_scene load_steps=6 format=3 uid="uid://ccumnmh08k3hl"]
 
 [ext_resource type="Texture2D" uid="uid://ctj7x8q1f37m" path="res://Jump (32x32).png" id="1_bguaw"]
+[ext_resource type="PackedScene" uid="uid://bawael6poyohe" path="res://terrain.tscn" id="1_pfoeh"]
+[ext_resource type="Texture2D" uid="uid://box5ubce3kk7r" path="res://Gray.png" id="2_b07yr"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="3_6gh8v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkf83"]
+radius = 109.0
+height = 314.0
 
 [node name="Node" type="Node"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TextureRect" parent="." instance=ExtResource("1_pfoeh")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b07yr")
+stretch_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("3_6gh8v")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(217.5, 271)
-scale = Vector2(14.5937, 17.9375)
+position = Vector2(165.75, 186.478)
+scale = Vector2(10.3906, 11.4468)
 texture = ExtResource("1_bguaw")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 399.0
-offset_top = 84.0
-offset_right = 694.0
-offset_bottom = 285.0
-text = "T U R T L E
-pray for ur life
-hes s t r o n g
-but..... I AM STRONGGEEERR!!
-oiled up frog 
-i like it"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(171, 202)
+shape = SubResource("CapsuleShape2D_bkf83")
