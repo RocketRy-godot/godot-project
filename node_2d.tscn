@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdb8prq3mmbb3"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(313, 244)
 
 [node name="Window" type="Window" parent="."]
 
