@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://hexcfdvec5ol"]
+[gd_scene load_steps=61 format=4 uid="uid://hexcfdvec5ol"]
 
 [ext_resource type="Texture2D" uid="uid://i0dd8d65igr3" path="res://Gray.png" id="1_toy6y"]
 [ext_resource type="Texture2D" uid="uid://cdbram56x0qyj" path="res://Attack_3.png" id="2_l6pvb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cp8o3jxks7lbb" path="res://Jump.png" id="5_11jo2"]
 [ext_resource type="Texture2D" uid="uid://cn64j0rvct6qw" path="res://Run.png" id="6_584e3"]
 [ext_resource type="Texture2D" uid="uid://2xuyr6jvfnhg" path="res://Walk.png" id="7_2fgck"]
+[ext_resource type="Texture2D" uid="uid://srwasy3nhtko" path="res://Terrain (16x16).png" id="9_qlkhv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnx1k"]
 atlas = ExtResource("2_l6pvb")
@@ -53,13 +54,25 @@ region = Rect2(256, 0, 128, 128)
 atlas = ExtResource("3_malt4")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_at85l"]
-atlas = ExtResource("5_11jo2")
-region = Rect2(1024, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2qa0d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwqlk"]
 atlas = ExtResource("5_11jo2")
 region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m22a"]
+atlas = ExtResource("5_11jo2")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3ums"]
+atlas = ExtResource("5_11jo2")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mchf8"]
+atlas = ExtResource("5_11jo2")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syflt"]
+atlas = ExtResource("5_11jo2")
+region = Rect2(1024, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqu42"]
 atlas = ExtResource("5_11jo2")
@@ -97,6 +110,10 @@ region = Rect2(512, 0, 128, 128)
 atlas = ExtResource("4_ltsck")
 region = Rect2(640, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qa0d"]
+atlas = ExtResource("5_11jo2")
+region = Rect2(512, 0, 128, 128)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qokh1"]
 atlas = ExtResource("5_11jo2")
 region = Rect2(0, 0, 128, 128)
@@ -112,10 +129,6 @@ region = Rect2(256, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8cn0"]
 atlas = ExtResource("5_11jo2")
 region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qimdg"]
-atlas = ExtResource("5_11jo2")
-region = Rect2(1024, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yxx0"]
 atlas = ExtResource("5_11jo2")
@@ -232,19 +245,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_at85l")
-}],
-"loop": true,
-"name": &"falling",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_mwqlk")
 }, {
-"frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2qa0d")
+"texture": SubResource("AtlasTexture_7m22a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3ums")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mchf8")
+}, {
+"duration": 100.0,
+"texture": SubResource("AtlasTexture_syflt")
 }],
 "loop": true,
-"name": &"flying",
-"speed": 5.0
+"name": &"fall",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -285,6 +302,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2qa0d")
+}],
+"loop": true,
+"name": &"jump_push",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qokh1")
 }, {
 "duration": 1.0,
@@ -293,17 +318,14 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k3qdy")
 }, {
-"duration": 1.0,
+"duration": 100.0,
 "texture": SubResource("AtlasTexture_f8cn0")
 }],
 "loop": true,
-"name": &"jumping",
-"speed": 8.0
+"name": &"jump_up",
+"speed": 20.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qimdg")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2yxx0")
 }, {
@@ -311,7 +333,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8di87")
 }],
 "loop": true,
-"name": &"landing",
+"name": &"land",
 "speed": 8.0
 }, {
 "frames": [{
@@ -374,6 +396,166 @@ animations = [{
 radius = 46.0
 height = 154.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkgsn"]
+texture = ExtResource("9_qlkhv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fqr6t"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jkgsn")
+
 [node name="Node" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -383,11 +565,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.970529, 0.970529)
 texture = ExtResource("1_toy6y")
 stretch_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-19, -12)
+texture_filter = 1
+position = Vector2(0, 4)
+scale = Vector2(0.490573, 0.490573)
 script = ExtResource("2_ofgxu")
 metadata/_edit_group_ = true
 
@@ -396,12 +581,18 @@ texture_filter = 1
 position = Vector2(66, 17)
 scale = Vector2(2.02344, 2.02344)
 sprite_frames = SubResource("SpriteFrames_asm46")
-animation = &"walking"
+animation = &"jump_up"
 autoplay = "idle"
-frame_progress = 0.92699
+frame_progress = 0.765941
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(67, 71)
 shape = SubResource("CapsuleShape2D_3b3tj")
 metadata/_edit_group_ = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(2, 2.006)
+tile_map_data = PackedByteArray("AABIACQAAAAHAAAAAABIACYAAAAHAAAAAABIACUAAAAHAAAAAAD//xEAAAAGAAAAAAD//xIAAAAGAAEAAAAAABEAAAAHAAAAAAAAABIAAAAHAAEAAAABABEAAAAHAAAAAAABABIAAAAHAAEAAAACABEAAAAHAAAAAAACABIAAAAHAAEAAAADABEAAAAHAAAAAAADABIAAAAHAAEAAAAEABEAAAAHAAAAAAAEABIAAAAHAAEAAAAFABEAAAAHAAAAAAAFABIAAAAHAAEAAAAGABEAAAAHAAAAAAAGABIAAAAHAAEAAAAHABEAAAAHAAAAAAAHABIAAAAHAAEAAAAIABEAAAAHAAAAAAAIABIAAAAHAAEAAAAJABEAAAAHAAAAAAAJABIAAAAHAAEAAAAKABEAAAAHAAAAAAAKABIAAAAHAAEAAAALABEAAAAHAAAAAAALABIAAAAHAAEAAAAMABEAAAAHAAAAAAAMABIAAAAHAAEAAAANABEAAAAHAAAAAAANABIAAAAHAAEAAAAOABEAAAAHAAAAAAAOABIAAAAHAAEAAAAPABEAAAAHAAAAAAAPABIAAAAHAAEAAAAQABEAAAAHAAAAAAAQABIAAAAHAAEAAAARABEAAAAHAAAAAAARABIAAAAHAAEAAAASABEAAAAHAAAAAAASABIAAAAHAAEAAAATABEAAAAHAAAAAAATABIAAAAHAAEAAAAUABEAAAAHAAAAAAAUABIAAAAHAAEAAAAVABEAAAAHAAAAAAAVABIAAAAHAAEAAAAWABEAAAAHAAAAAAAWABIAAAAHAAEAAAAXABEAAAAHAAAAAAAXABIAAAAHAAEAAAAYABEAAAAHAAAAAAAYABIAAAAHAAEAAAAZABEAAAAHAAAAAAAZABIAAAAHAAEAAAAaABEAAAAHAAAAAAAaABIAAAAHAAEAAAAbABEAAAAHAAAAAAAbABIAAAAHAAEAAAAcABEAAAAHAAAAAAAcABIAAAAHAAEAAAAdABEAAAAHAAAAAAAdABIAAAAHAAEAAAAeABEAAAAHAAAAAAAeABIAAAAHAAEAAAAfABEAAAAHAAAAAAAfABIAAAAHAAEAAAAgABEAAAAHAAAAAAAgABIAAAAHAAEAAAAhABEAAAAHAAAAAAAhABIAAAAHAAEAAAAiABEAAAAIAAAAAAAiABIAAAAIAAEAAAD//xMAAAAGAAIAAAAAABMAAAAHAAIAAAABABMAAAAHAAIAAAACABMAAAAHAAIAAAADABMAAAAHAAIAAAAEABMAAAAHAAIAAAAFABMAAAAHAAIAAAAGABMAAAAHAAIAAAAHABMAAAAHAAIAAAAIABMAAAAHAAIAAAAJABMAAAAHAAIAAAAKABMAAAAHAAIAAAALABMAAAAHAAIAAAAMABMAAAAHAAIAAAANABMAAAAHAAIAAAAOABMAAAAHAAIAAAAPABMAAAAHAAIAAAAQABMAAAAHAAIAAAARABMAAAAHAAIAAAASABMAAAAHAAIAAAATABMAAAAHAAIAAAAUABMAAAAHAAIAAAAVABMAAAAHAAIAAAAWABMAAAAHAAIAAAAXABMAAAAHAAIAAAAYABMAAAAHAAIAAAAZABMAAAAHAAIAAAAaABMAAAAHAAIAAAAbABMAAAAHAAIAAAAcABMAAAAHAAIAAAAdABMAAAAHAAIAAAAeABMAAAAHAAIAAAAfABMAAAAHAAIAAAAgABMAAAAHAAIAAAAhABMAAAAHAAIAAAAiABMAAAAIAAIAAAAHAA4AAAAGAAAAAAAHAA8AAAAGAAEAAAAIAA4AAAAHAAAAAAAIAA8AAAAHAAEAAAAJAA4AAAAIAAAAAAAJAA8AAAAIAAEAAAAMAAwAAAAGAAAAAAAMAA0AAAAGAAEAAAANAAwAAAAHAAAAAAANAA0AAAAHAAEAAAAOAAwAAAAIAAAAAAAOAA0AAAAIAAEAAAASAAoAAAAGAAAAAAASAAsAAAAGAAEAAAATAAoAAAAHAAAAAAATAAsAAAAHAAEAAAAUAAoAAAAIAAAAAAAUAAsAAAAIAAEAAAAYAAgAAAAGAAAAAAAYAAkAAAAGAAEAAAAZAAgAAAAHAAAAAAAZAAkAAAAHAAEAAAAaAAgAAAAIAAAAAAAaAAkAAAAIAAEAAAAdAAwAAAAGAAAAAAAdAA0AAAAGAAEAAAAeAAwAAAAHAAAAAAAeAA0AAAAHAAEAAAAfAAwAAAAIAAAAAAAfAA0AAAAIAAEAAAA=")
+tile_set = SubResource("TileSet_fqr6t")

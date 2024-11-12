@@ -1,25 +1,87 @@
 extends CharacterBody2D
 
+# Speed variables
+var walk_speed := 100
+var run_speed := 250
+var gravity := 800
+var jump_force := -700
+var jump_cut_off_speed := -200  # Speed when jump transition to falling starts
+var max_fall_speed := 600  # Max speed for falling
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+# State variables
+var is_running := false
+var jump_phase := "idle"  # Initial jump phase
+
+# Animation player or animated sprite node
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+func _physics_process(delta):
+	# Apply gravity
+	if !is_on_floor():
+		self.velocity.y += gravity * delta
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		self.velocity.y = 0
 
+	# Get input for movement and actions
+	var direction := Input.get_action_strength("right") - Input.get_action_strength("left")
+	is_running = Input.is_action_pressed("run")
+	var jump_pressed := Input.is_action_just_pressed("jump")
+	
+	# Horizontal movement
+	if direction != 0:
+		if is_running:
+			self.velocity.x = direction * run_speed
+			if jump_phase == "idle":  # Play running animation only if on ground
+				sprite_2d.animation = "running"
+		else:
+			self.velocity.x = direction * walk_speed
+			if jump_phase == "idle":
+				sprite_2d.animation = "walking"
+	else:
+		self.velocity.x = 0
+		if jump_phase == "idle":
+			sprite_2d.animation = "idle"
+
+	# Jump handling (broken down into phases)
+	if jump_phase == "idle":
+		if jump_pressed and is_on_floor():
+			# Begin the jump with a "push" phase
+			self.velocity.y = jump_force
+			jump_phase = "push"
+			sprite_2d.animation = "jump_push"
+
+	elif jump_phase == "push":
+		# Push phase transitions to "up" as the character rises
+		if self.velocity.y < 0:
+			jump_phase = "up"
+			sprite_2d.animation = "jump_up"
+
+	elif jump_phase == "up":
+		# Transition to falling if moving downward
+		if self.velocity.y > jump_cut_off_speed:
+			jump_phase = "falling"
+			sprite_2d.animation = "fall"
+
+	elif jump_phase == "falling":
+		# Apply gravity and clamp fall speed
+		self.velocity.y = min(self.velocity.y + gravity * delta, max_fall_speed)
+
+	if jump_phase == "idle" and !is_on_floor() and self.velocity.y > 0:
+		jump_phase = "falling"
+		sprite_2d.animation = "fall"
+
+	# Movement with collision handling
 	move_and_slide()
+
+	# Check if character has landed
+	if is_on_floor():
+		if jump_phase == "falling":
+			jump_phase = "land"
+			sprite_2d.animation = "land"
+		elif jump_phase == "land" or self.velocity.x == 0:
+			jump_phase = "idle"
+			sprite_2d.animation = "idle"
+	
+	var isLeft = velocity.x < 0
+	sprite_2d.flip_h = isLeft
