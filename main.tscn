@@ -261,7 +261,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
-"speed": 12.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -581,9 +581,8 @@ texture_filter = 1
 position = Vector2(66, 17)
 scale = Vector2(2.02344, 2.02344)
 sprite_frames = SubResource("SpriteFrames_asm46")
-animation = &"jump_up"
+animation = &"fall"
 autoplay = "idle"
-frame_progress = 0.765941
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
