@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0rty5tonmfee"]
+
+[ext_resource type="Script" path="res://scenes/shards_of_lumaria.gd" id="1_nymt0"]
+[ext_resource type="Texture2D" uid="uid://ct4b6ru2encku" path="res://6.png" id="1_png27"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu0mt"]
+atlas = ExtResource("1_png27")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yswsh"]
+atlas = ExtResource("1_png27")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoop7"]
+atlas = ExtResource("1_png27")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3twhs"]
+atlas = ExtResource("1_png27")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twlsi"]
+atlas = ExtResource("1_png27")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqhj0"]
+atlas = ExtResource("1_png27")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_682jj"]
+atlas = ExtResource("1_png27")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snjjl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu0mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yswsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoop7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3twhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twlsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqhj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_682jj")
+}],
+"loop": true,
+"name": &"shards of lumaria",
+"speed": 13.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_68evp"]
+radius = 13.0
+
+[node name="collectible ( shards of lumaria)" type="Area2D"]
+script = ExtResource("1_nymt0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7, 7)
+scale = Vector2(1.875, 1.875)
+sprite_frames = SubResource("SpriteFrames_snjjl")
+animation = &"shards of lumaria"
+autoplay = "shards of lumaria"
+frame_progress = 0.486462
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 7)
+shape = SubResource("CircleShape2D_68evp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

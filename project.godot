@@ -10,9 +10,14 @@ config_version=5
 
 [application]
 
-config/name="PlatformerForPanoPly"
+config/name="PlatformerForPanoPly .COPY"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 
