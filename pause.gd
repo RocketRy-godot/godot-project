@@ -21,8 +21,8 @@ func _on_resume_pressed():
 	resume()
 	
 func _on_restart_pressed():
-	get_tree().reload_current_scene()
 	resume()
+	get_tree().reload_current_scene()
 	
 
 
