@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 # Speed variables
+
 var walk_speed := 150
 var run_speed := 300
 var gravity := 1500
@@ -14,6 +15,13 @@ var jump_phase := "idle"  # Initial jump phase
 
 # Animation player or animated sprite node
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var actionable_finder: Area2D = $Marker2D/actionable_finder
+
+
+
+
+
+
 
 
 func _physics_process(delta):
@@ -85,3 +93,12 @@ func _physics_process(delta):
 	
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
+	
+	
+func _process(delta):
+	# Check for interaction input
+	if Input.is_action_just_pressed("interact"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
