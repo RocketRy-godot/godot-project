@@ -96,7 +96,7 @@ func _physics_process(delta):
 	sprite_2d.flip_h = isLeft
 	
 	
-func _process(time_elapsed):
+func _process(_time_elapsed):
 	# Check for interaction input
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()

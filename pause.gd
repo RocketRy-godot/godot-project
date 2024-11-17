@@ -29,5 +29,5 @@ func _on_restart_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
-func _process(gigachad):
+func _process(_gigachad):
 	testEsc()
