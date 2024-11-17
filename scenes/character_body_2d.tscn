@@ -406,7 +406,7 @@ texture_filter = 1
 position = Vector2(66, 17)
 scale = Vector2(2.02344, 2.02344)
 sprite_frames = SubResource("SpriteFrames_asm46")
-animation = &"jump_up"
+animation = &"attack_3"
 autoplay = "idle"
 metadata/_edit_group_ = true
 

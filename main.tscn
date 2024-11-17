@@ -249,7 +249,7 @@ texture = ExtResource("1_toy6y")
 stretch_mode = 1
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_03ixu")]
-position = Vector2(94, 16)
+position = Vector2(64, 499)
 
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
 unique_name_in_owner = true
@@ -307,3 +307,7 @@ shape = SubResource("CircleShape2D_i6rt2")
 [node name="canvas" type="CanvasLayer" parent="."]
 
 [node name="pause" parent="canvas" instance=ExtResource("9_j8wws")]
+offset_left = 22.0
+offset_top = -8.0
+offset_right = 22.0
+offset_bottom = -8.0

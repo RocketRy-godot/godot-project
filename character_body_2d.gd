@@ -12,6 +12,7 @@ var max_fall_speed := 600  # Max speed for falling
 # State variables
 var is_running := false
 var jump_phase := "idle"  # Initial jump phase
+var is_attacking := false  # To prevent animation conflict during an attack
 
 # Animation player or animated sprite node
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
@@ -95,10 +96,20 @@ func _physics_process(delta):
 	sprite_2d.flip_h = isLeft
 	
 	
-func _process(delta):
+func _process(_delta):
 	# Check for interaction input
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
+	if Input.is_action_just_pressed("attack"):
+		play_attack_animation()
+func play_attack_animation():
+	if not is_attacking:
+		is_attacking = true
+		sprite_2d.animation = "attack_3"
+		# Reset is_attacking after animation finishes (example: 0.5 seconds for animation length)
+		await get_tree().create_timer(2.0).timeout
+		is_attacking = false
+		
