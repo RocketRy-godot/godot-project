@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bactfrthimlfa" path="res://scenes/character_body_2d.tscn" id="2_03ixu"]
 [ext_resource type="PackedScene" uid="uid://ckokj37gq5g5p" path="res://helpers/actionables.tscn" id="7_xtbaf"]
 [ext_resource type="Resource" uid="uid://ck0dwa3067s6r" path="res://dialogues/main.dialogue" id="8_jkqi5"]
-[ext_resource type="PackedScene" uid="uid://d15exnejd442j" path="res://pause.tscn" id="9_j8wws"]
+[ext_resource type="PackedScene" path="res://pause.tscn" id="9_j8wws"]
 [ext_resource type="Texture2D" uid="uid://srwasy3nhtko" path="res://pics/Terrain (16x16).png" id="9_qlkhv"]
 [ext_resource type="PackedScene" uid="uid://c0rty5tonmfee" path="res://scenes/shards_of_lumaria.tscn" id="10_5u35y"]
 [ext_resource type="Script" path="res://game_manager.gd" id="11_ddrtt"]
