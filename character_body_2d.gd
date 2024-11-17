@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 # Speed variables
-var walk_speed := 100
-var run_speed := 250
-var gravity := 800
-var jump_force := -700
+var walk_speed := 150
+var run_speed := 300
+var gravity := 1500
+var jump_force := -800
 var jump_cut_off_speed := -200  # Speed when jump transition to falling starts
 var max_fall_speed := 600  # Max speed for falling
 
