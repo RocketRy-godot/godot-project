@@ -94,22 +94,13 @@ func _physics_process(delta):
 	
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
-	
-	
-func _process(_time_elapsed):
+func _process(delta):
 	# Check for interaction input
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
-	if Input.is_action_just_pressed("attack"):
-		play_attack_animation()
-func play_attack_animation():
-	if not is_attacking:
-		is_attacking = true
-		sprite_2d.animation = "attack_3"
-		# Reset is_attacking after animation finishes (example: 0.5 seconds for animation length)
-		await get_tree().create_timer(2.0).timeout
-		is_attacking = false
+
+
 		
