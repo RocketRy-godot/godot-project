@@ -294,6 +294,7 @@ position = Vector2(1004, 396)
 position = Vector2(1838, 510)
 sprite_frames = SubResource("SpriteFrames_7iu5h")
 animation = &"idle"
+autoplay = "idle"
 frame_progress = 0.634034
 
 [node name="Actionables" parent="StaticBody2D" instance=ExtResource("7_xtbaf")]
