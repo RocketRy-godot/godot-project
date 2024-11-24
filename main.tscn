@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bwiidh37clkrm" path="res://Idle.png" id="12_vf5f8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhtgv"]
-radius = 79.4989
+radius = 145.287
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlfhe"]
 atlas = ExtResource("12_vf5f8")
@@ -92,7 +92,8 @@ stretch_mode = 1
 [node name="terrain" parent="." instance=ExtResource("2_wexo6")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_03ixu")]
-position = Vector2(325, 469)
+position = Vector2(137, 485)
+scale = Vector2(0.407737, 0.407737)
 script = ExtResource("3_fgbop")
 
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
