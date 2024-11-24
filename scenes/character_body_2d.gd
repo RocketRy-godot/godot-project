@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 # Speed variables
 
-var walk_speed := 80
-var run_speed := 200
-var gravity := 1000
-var jump_force := -500
+var walk_speed := 150
+var run_speed := 300
+var gravity := 1500
+var jump_force := -800
 var jump_cut_off_speed := -200  # Speed when jump transition to falling starts
 var max_fall_speed := 600  # Max speed for falling
 
@@ -27,8 +27,6 @@ var is_attacking := false  # To prevent animation conflict during an attack
 
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed('test'):
-		$HealthComponent.damage(1)
 	# Apply gravity
 	if !is_on_floor():
 		self.velocity.y += gravity * delta

@@ -1,0 +1,328 @@
+[gd_scene load_steps=23 format=4 uid="uid://hexcfdvec5ol"]
+
+[ext_resource type="Texture2D" uid="uid://i0dd8d65igr3" path="res://pics/Gray.png" id="1_toy6y"]
+[ext_resource type="Script" path="res://main.gd" id="1_uuayq"]
+[ext_resource type="PackedScene" uid="uid://bactfrthimlfa" path="res://scenes/character_body_2d.tscn" id="2_03ixu"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="3_fgbop"]
+[ext_resource type="Script" path="res://node_2d_2.gd" id="4_5krqy"]
+[ext_resource type="PackedScene" uid="uid://ckokj37gq5g5p" path="res://helpers/actionables.tscn" id="7_xtbaf"]
+[ext_resource type="Resource" uid="uid://ck0dwa3067s6r" path="res://dialogues/main.dialogue" id="8_jkqi5"]
+[ext_resource type="Texture2D" uid="uid://srwasy3nhtko" path="res://pics/Terrain (16x16).png" id="9_qlkhv"]
+[ext_resource type="PackedScene" uid="uid://dr5tc7kusiv2p" path="res://pause.tscn" id="9_ytcrf"]
+[ext_resource type="PackedScene" uid="uid://c0rty5tonmfee" path="res://scenes/shards_of_lumaria.tscn" id="10_5u35y"]
+[ext_resource type="Script" path="res://game_manager.gd" id="11_ddrtt"]
+[ext_resource type="Texture2D" uid="uid://bwiidh37clkrm" path="res://Idle.png" id="12_vf5f8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhtgv"]
+radius = 79.4989
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkgsn"]
+texture = ExtResource("9_qlkhv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fqr6t"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jkgsn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlfhe"]
+atlas = ExtResource("12_vf5f8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fntd"]
+atlas = ExtResource("12_vf5f8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbkfr"]
+atlas = ExtResource("12_vf5f8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5qmi"]
+atlas = ExtResource("12_vf5f8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e31p"]
+atlas = ExtResource("12_vf5f8")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7iu5h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlfhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlfhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlfhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fntd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbkfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5qmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e31p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlfhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlfhe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 13.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6rt2"]
+radius = 63.0
+
+[node name="mainworld" type="Node"]
+script = ExtResource("1_uuayq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -8.0
+offset_right = 1032.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.970529, 0.970529)
+texture = ExtResource("1_toy6y")
+stretch_mode = 1
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_03ixu")]
+position = Vector2(64, 499)
+script = ExtResource("3_fgbop")
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+unique_name_in_owner = true
+
+[node name="actionable_finder" type="Area2D" parent="CharacterBody2D/Marker2D"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Marker2D/actionable_finder"]
+position = Vector2(63.1914, 69.3067)
+shape = SubResource("CircleShape2D_hhtgv")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(2, 2.006)
+tile_map_data = PackedByteArray("AABIACQAAAAHAAAAAABIACYAAAAHAAAAAABIACUAAAAHAAAAAAD//xEAAAAGAAEAAAD//xIAAAAGAAEAAAAAABEAAAAHAAAAAAAAABIAAAAHAAEAAAABABEAAAAHAAAAAAABABIAAAAHAAEAAAACABEAAAAHAAAAAAACABIAAAAHAAEAAAADABEAAAAHAAAAAAADABIAAAAHAAEAAAAEABEAAAAHAAAAAAAEABIAAAAHAAEAAAAFABEAAAAHAAAAAAAFABIAAAAHAAEAAAAGABEAAAAHAAAAAAAGABIAAAAHAAEAAAAHABEAAAAHAAAAAAAHABIAAAAHAAEAAAAIABEAAAAHAAAAAAAIABIAAAAHAAEAAAAJABEAAAAHAAAAAAAJABIAAAAHAAEAAAAKABEAAAAHAAAAAAAKABIAAAAHAAEAAAALABEAAAAHAAAAAAALABIAAAAHAAEAAAAMABEAAAAHAAAAAAAMABIAAAAHAAEAAAANABEAAAAHAAAAAAANABIAAAAHAAEAAAAOABEAAAAHAAAAAAAOABIAAAAHAAEAAAAPABEAAAAHAAAAAAAPABIAAAAHAAEAAAAQABEAAAAHAAAAAAAQABIAAAAHAAEAAAARABEAAAAHAAAAAAARABIAAAAHAAEAAAASABEAAAAHAAAAAAASABIAAAAHAAEAAAATABEAAAAHAAAAAAATABIAAAAHAAEAAAAUABEAAAAHAAAAAAAUABIAAAAHAAEAAAAVABEAAAAHAAAAAAAVABIAAAAHAAEAAAAWABEAAAAHAAAAAAAWABIAAAAHAAEAAAAXABEAAAAHAAAAAAAXABIAAAAHAAEAAAAYABEAAAAHAAAAAAAYABIAAAAHAAEAAAAZABEAAAAHAAAAAAAZABIAAAAHAAEAAAAaABEAAAAHAAAAAAAaABIAAAAHAAEAAAAbABEAAAAHAAAAAAAbABIAAAAHAAEAAAAcABEAAAAHAAAAAAAcABIAAAAHAAEAAAAdABEAAAAHAAAAAAAdABIAAAAHAAEAAAAeABEAAAAHAAAAAAAeABIAAAAHAAEAAAAfABEAAAAHAAAAAAAfABIAAAAHAAEAAAAgABEAAAAHAAAAAAAgABIAAAAHAAEAAAAhABEAAAAHAAAAAAAhABIAAAAHAAEAAAAiABEAAAAIAAAAAAAiABIAAAAIAAEA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AABBAAAAAAAIAAEAAABBAAEAAAAIAAEAAABBAAIAAAAIAAEAAABBAAMAAAAIAAEAAABBAAQAAAAIAAEAAABBAAcAAAAIAAEAAABBAAYAAAAIAAEAAABBAAUAAAAIAAEAAABBAAgAAAAIAAEAAABBAAkAAAAIAAEAAABBAAoAAAAIAAEAAABBAAsAAAAIAAEAAABBAAwAAAAIAAEAAABBAA0AAAAIAAEAAABBAA4AAAAIAAEAAABBAA8AAAAIAAEAAABBABAAAAAIAAEAAABBABEAAAAIAAEAAABBABIAAAAIAAEAAABAABMAAAAIAAIAAABBABMAAAAIAAIAAAAjABMAAAAHAAIAAAAkABMAAAAHAAIAAAAlABMAAAAHAAIAAAAmABMAAAAHAAIAAAAnABMAAAAHAAIAAAAoABMAAAAHAAIAAAApABMAAAAHAAIAAAAqABMAAAAHAAIAAAArABMAAAAHAAIAAAAsABMAAAAHAAIAAAAtABMAAAAHAAIAAAAuABMAAAAHAAIAAAAvABMAAAAHAAIAAAAwABMAAAAHAAIAAAAxABMAAAAHAAIAAAAyABMAAAAHAAIAAAAzABMAAAAHAAIAAAA0ABMAAAAHAAIAAAA1ABMAAAAHAAIAAAA2ABMAAAAHAAIAAAA3ABMAAAAHAAIAAAA4ABMAAAAHAAIAAAA5ABMAAAAHAAIAAAA6ABMAAAAHAAIAAAA7ABMAAAAHAAIAAAA8ABMAAAAHAAIAAAA9ABMAAAAHAAIAAAA+ABMAAAAHAAIAAAA/ABMAAAAHAAIAAAA9AP7/AAAHAAAAAAA+AP7/AAAHAAAAAAAjABEAAAAHAAAAAAAjABIAAAAHAAEAAAAkABEAAAAHAAAAAAAkABIAAAAHAAEAAAAlABEAAAAHAAAAAAAlABIAAAAHAAEAAAAmABEAAAAHAAAAAAAmABIAAAAHAAEAAAAnABEAAAAHAAAAAAAnABIAAAAHAAEAAAAoABEAAAAHAAAAAAAoABIAAAAHAAEAAAApABEAAAAHAAAAAAApABIAAAAHAAEAAAAqABEAAAAHAAAAAAAqABIAAAAHAAEAAAArABEAAAAHAAAAAAArABIAAAAHAAEAAAAsABEAAAAHAAAAAAAsABIAAAAHAAEAAAAtABEAAAAHAAAAAAAtABIAAAAHAAEAAAAuABEAAAAHAAAAAAAuABIAAAAHAAEAAAAvABEAAAAHAAAAAAAvABIAAAAHAAEAAAAwABEAAAAHAAAAAAAwABIAAAAHAAEAAAAxABEAAAAHAAAAAAAxABIAAAAHAAEAAAAyABEAAAAHAAAAAAAyABIAAAAHAAEAAAAzABEAAAAHAAAAAAAzABIAAAAHAAEAAAA0ABEAAAAHAAAAAAA0ABIAAAAHAAEAAAA1ABEAAAAHAAAAAAA1ABIAAAAHAAEAAAA2ABEAAAAHAAAAAAA2ABIAAAAHAAEAAAA3ABEAAAAHAAAAAAA3ABIAAAAHAAEAAAA4ABEAAAAHAAAAAAA4ABIAAAAHAAEAAAA5ABEAAAAHAAAAAAA5ABIAAAAHAAEAAAA6ABEAAAAHAAAAAAA6ABIAAAAHAAEAAAA7ABEAAAAHAAAAAAA7ABIAAAAHAAEAAAA8ABEAAAAHAAAAAAA8ABIAAAAHAAEAAAA9ABEAAAAHAAAAAAA9ABIAAAAHAAEAAAA+ABEAAAAHAAAAAAA+ABIAAAAHAAEAAAA/ABEAAAAHAAAAAAA/ABIAAAAHAAEAAABAABEAAAAHAAAAAABAABIAAAAHAAEAAAA=")
+tile_set = SubResource("TileSet_fqr6t")
+
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("11_ddrtt")
+
+[node name="Shards of lumaria" type="Node" parent="."]
+
+[node name="collectible ( shards of lumaria)" parent="Shards of lumaria" instance=ExtResource("10_5u35y")]
+position = Vector2(295, 459)
+
+[node name="collectible ( shards of lumaria)2" parent="Shards of lumaria" instance=ExtResource("10_5u35y")]
+position = Vector2(457, 395)
+
+[node name="collectible ( shards of lumaria)3" parent="Shards of lumaria" instance=ExtResource("10_5u35y")]
+position = Vector2(650, 333)
+
+[node name="collectible ( shards of lumaria)4" parent="Shards of lumaria" instance=ExtResource("10_5u35y")]
+position = Vector2(839, 267)
+
+[node name="collectible ( shards of lumaria)5" parent="Shards of lumaria" instance=ExtResource("10_5u35y")]
+position = Vector2(1004, 396)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+position = Vector2(1838, 510)
+sprite_frames = SubResource("SpriteFrames_7iu5h")
+animation = &"idle"
+frame_progress = 0.634034
+
+[node name="Actionables" parent="StaticBody2D" instance=ExtResource("7_xtbaf")]
+dialogue_resource = ExtResource("8_jkqi5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Actionables"]
+position = Vector2(1840, 539)
+shape = SubResource("CircleShape2D_i6rt2")
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(64, 499)
+scale = Vector2(0.490573, 0.490573)
+script = ExtResource("4_5krqy")
+MAX_HEALTH = null
+
+[node name="pausecanvas" type="CanvasLayer" parent="Node2D2"]
+
+[node name="pausenode" parent="Node2D2/pausecanvas" instance=ExtResource("9_ytcrf")]
+
+[node name="Label2" type="Label" parent="Node2D2/pausecanvas"]
+offset_left = 565.0
+offset_top = 222.0
+offset_right = 655.0
+offset_bottom = 300.0
+text = "100 Hp"
+vertical_alignment = 1
