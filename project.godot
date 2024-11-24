@@ -13,6 +13,7 @@ config_version=5
 config/name="PlatformerForPanoPly"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://PNG/ve2.png"
 
 [autoload]
 
