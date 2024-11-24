@@ -79,10 +79,10 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 34.0
-offset_top = -8.0
-offset_right = 1032.0
-offset_bottom = -8.0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 1005.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.970529, 0.970529)
@@ -92,8 +92,8 @@ stretch_mode = 1
 [node name="terrain" parent="." instance=ExtResource("2_wexo6")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_03ixu")]
-position = Vector2(137, 485)
-scale = Vector2(0.407737, 0.407737)
+position = Vector2(178, 469)
+scale = Vector2(0.330982, 0.330982)
 script = ExtResource("3_fgbop")
 
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
@@ -151,10 +151,16 @@ position = Vector2(1840, 539)
 shape = SubResource("CircleShape2D_i6rt2")
 
 [node name="pausecanvas" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="pausenode" parent="pausecanvas" instance=ExtResource("9_ytcrf")]
-offset_left = 384.0
-offset_top = 6.0
-offset_right = 384.0
-offset_bottom = 6.0
+anchors_preset = -1
+anchor_left = -0.253
+anchor_top = 0.603
+anchor_right = 0.751
+anchor_bottom = 1.609
+offset_left = -0.0219879
+offset_top = -0.144012
+offset_right = 5.67395
+offset_bottom = 3.16797
 scale = Vector2(0.992941, 0.992941)
