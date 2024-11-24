@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm1htmeo1eywc" path="res://pics/Idle.png" id="6_shv2b"]
 [ext_resource type="Texture2D" uid="uid://cn64j0rvct6qw" path="res://pics/Run.png" id="7_tsjmh"]
 [ext_resource type="Texture2D" uid="uid://2xuyr6jvfnhg" path="res://pics/Walk.png" id="8_f1oeg"]
-[ext_resource type="Texture2D" uid="uid://srwasy3nhtko" path="res://pics/Terrain (16x16).png" id="9_hhanm"]
+[ext_resource type="Texture2D" uid="uid://srwasy3nhtko" path="res://tileset/Terrain (16x16).png" id="9_hhanm"]
 [ext_resource type="Texture2D" uid="uid://wyk3uh1wyrt6" path="res://terrains updated.png" id="10_fivn3"]
 [ext_resource type="Script" path="res://game_manager.gd" id="11_opskd"]
 [ext_resource type="PackedScene" uid="uid://c0rty5tonmfee" path="res://scenes/shards_of_lumaria.tscn" id="12_6okwo"]

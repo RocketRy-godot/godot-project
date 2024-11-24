@@ -20,6 +20,8 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
+window/size/viewport_width=2360
+window/size/viewport_height=320
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
