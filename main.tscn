@@ -18126,7 +18126,9 @@ position = Vector2(2186, 489)
 position = Vector2(3593, 200)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("5_w1qqg")]
-scale = Vector2(1.05193, 0.893571)
+texture_filter = 1
+position = Vector2(1197, 161)
+scale = Vector2(0.689019, 0.615488)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("2_03ixu")]
 position = Vector2(166, 51)
