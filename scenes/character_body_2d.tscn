@@ -567,8 +567,14 @@ metadata/_edit_group_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(67.2683, 67.2683)
 scale = Vector2(2.03843, 2.03843)
+zoom = Vector2(1.5, 1.5)
+limit_left = 32
+limit_top = 0
+limit_right = 3871
+limit_bottom = 672
+limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 7.0
+position_smoothing_speed = 2.0
 
 [node name="landingsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_ue2ow")
@@ -577,7 +583,8 @@ pitch_scale = 1.25
 
 [node name="walkingsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_jq5cc")
-volume_db = 1.0
+volume_db = 0.395
+pitch_scale = 0.77
 
 [node name="initialjumping" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_j2kom")

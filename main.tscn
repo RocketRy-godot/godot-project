@@ -11,9 +11,6 @@
 [ext_resource type="Script" path="res://game_manager.gd" id="11_ddrtt"]
 [ext_resource type="Texture2D" uid="uid://bwiidh37clkrm" path="res://Idle.png" id="12_vf5f8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hhtgv"]
-radius = 145.287
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlfhe"]
 atlas = ExtResource("12_vf5f8")
 region = Rect2(0, 0, 128, 128)
@@ -72,6 +69,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i6rt2"]
 radius = 63.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhtgv"]
+radius = 145.287
+
 [node name="Node" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -90,22 +90,6 @@ texture = ExtResource("1_toy6y")
 stretch_mode = 1
 
 [node name="terrain" parent="." instance=ExtResource("2_wexo6")]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_03ixu")]
-position = Vector2(178, 469)
-scale = Vector2(0.330982, 0.330982)
-script = ExtResource("3_fgbop")
-
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
-unique_name_in_owner = true
-
-[node name="actionable_finder" type="Area2D" parent="CharacterBody2D/Marker2D"]
-collision_layer = 0
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Marker2D/actionable_finder"]
-position = Vector2(63.1914, 69.3067)
-shape = SubResource("CircleShape2D_hhtgv")
 
 [node name="Game Manager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -134,8 +118,8 @@ position = Vector2(1725, 464)
 scale = Vector2(0.641026, 0.641026)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(672, 33)
-scale = Vector2(0.898659, 0.834387)
+position = Vector2(1058, 158)
+scale = Vector2(0.666328, 0.618672)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
 position = Vector2(1838, 510)
@@ -150,8 +134,23 @@ dialogue_resource = ExtResource("8_jkqi5")
 position = Vector2(1840, 539)
 shape = SubResource("CircleShape2D_i6rt2")
 
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_03ixu")]
+position = Vector2(178, 469)
+scale = Vector2(0.330982, 0.330982)
+script = ExtResource("3_fgbop")
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+unique_name_in_owner = true
+
+[node name="actionable_finder" type="Area2D" parent="CharacterBody2D/Marker2D"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Marker2D/actionable_finder"]
+position = Vector2(63.1914, 69.3067)
+shape = SubResource("CircleShape2D_hhtgv")
+
 [node name="pausecanvas" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
 
 [node name="pausenode" parent="pausecanvas" instance=ExtResource("9_ytcrf")]
 anchors_preset = -1
@@ -164,3 +163,6 @@ offset_top = -389.92
 offset_right = 332.236
 offset_bottom = -386.608
 scale = Vector2(0.992941, 0.992941)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
