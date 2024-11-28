@@ -164,6 +164,7 @@ texture_filter = 1
 scale = Vector2(1.67188, 1.5625)
 sprite_frames = SubResource("SpriteFrames_7arvu")
 autoplay = "default"
+frame_progress = 0.0413065
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9.5)
