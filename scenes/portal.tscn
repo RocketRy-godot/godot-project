@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwpdi23vydrpl"]
+
+[ext_resource type="Script" path="res://scenes/portal_1.gd" id="1_4ccp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve2lk"]
+size = Vector2(91, 60.5)
+
+[node name="portal 1" type="Area2D"]
+position = Vector2(3792, 496)
+script = ExtResource("1_4ccp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 20.75)
+shape = SubResource("RectangleShape2D_ve2lk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjq4fekauhk0f"]
+
+[ext_resource type="Texture2D" uid="uid://d0votwx3a7sks" path="res://PNG/light.png" id="1_d0lon"]
+
+[node name="PointLight2D" type="PointLight2D"]
+position = Vector2(66.4689, 66.4689)
+energy = 0.3
+texture = ExtResource("1_d0lon")
+texture_scale = 3.0

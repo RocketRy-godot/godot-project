@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bgd8jt2af6it4"
+path="res://.godot/imported/Entrance.dialogue-a3af9177f1eed6a4312bcc98146b589b.tres"
+
+[deps]
+
+source_file="res://assets/dialogues/Entrance.dialogue"
+dest_files=["res://.godot/imported/Entrance.dialogue-a3af9177f1eed6a4312bcc98146b589b.tres"]
+
+[params]
+
+defaults=true

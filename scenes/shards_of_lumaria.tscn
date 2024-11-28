@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c0rty5tonmfee"]
 
 [ext_resource type="Script" path="res://scenes/shards_of_lumaria.gd" id="1_nymt0"]
-[ext_resource type="Texture2D" uid="uid://ct4b6ru2encku" path="res://6.png" id="1_png27"]
+[ext_resource type="Texture2D" uid="uid://ct4b6ru2encku" path="res://PNG/6.png" id="1_png27"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uu0mt"]
 atlas = ExtResource("1_png27")

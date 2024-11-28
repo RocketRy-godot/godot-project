@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dynpj5eyhqa53"]
 
-[ext_resource type="Texture2D" uid="uid://bwiidh37clkrm" path="res://Idle.png" id="1_1ef1j"]
+[ext_resource type="Texture2D" uid="uid://bwiidh37clkrm" path="res://PNG/Idle.png" id="1_1ef1j"]
 [ext_resource type="PackedScene" uid="uid://ckokj37gq5g5p" path="res://helpers/actionables.tscn" id="2_o2nq8"]
-[ext_resource type="Resource" uid="uid://ck0dwa3067s6r" path="res://dialogues/main.dialogue" id="3_qwinn"]
+[ext_resource type="Resource" uid="uid://ck0dwa3067s6r" path="res://assets/dialogues/main.dialogue" id="3_qwinn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlfhe"]
 atlas = ExtResource("1_1ef1j")
