@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dkqo51iraiujc"]
+[gd_scene load_steps=31 format=4 uid="uid://dkqo51iraiujc"]
 
 [ext_resource type="Texture2D" uid="uid://c4cwlpd1aihts" path="res://assets/Backgrounds/2/1.png" id="1_soml2"]
 [ext_resource type="Texture2D" uid="uid://qxtyl6dm3j2d" path="res://assets/Backgrounds/2/2.png" id="2_vke8e"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scenes/portal_2.gd" id="10_dn55c"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="11_bamuf"]
 [ext_resource type="PackedScene" uid="uid://bjq4fekauhk0f" path="res://scenes/point_light_2d.tscn" id="12_wnvhv"]
+[ext_resource type="PackedScene" uid="uid://dr5tc7kusiv2p" path="res://scenes/pause.tscn" id="13_ffheo"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2rs8c"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -18200,5 +18201,22 @@ shape = SubResource("CircleShape2D_b14wg")
 
 [node name="PointLight2D" parent="CharacterBody2D" instance=ExtResource("12_wnvhv")]
 position = Vector2(75.5328, 54.3837)
+
+[node name="pausecanvas" type="CanvasLayer" parent="."]
+
+[node name="pausenode" parent="pausecanvas" instance=ExtResource("13_ffheo")]
+anchors_preset = -1
+anchor_left = -0.253
+anchor_top = 0.603
+anchor_right = 0.751
+anchor_bottom = 1.609
+offset_left = 313.54
+offset_top = -381.92
+offset_right = 319.236
+offset_bottom = -378.608
+scale = Vector2(0.992941, 0.992941)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="portal_2" to="portal_2" method="_on_body_entered"]

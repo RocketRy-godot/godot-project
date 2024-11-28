@@ -22,7 +22,8 @@ var is_attacking := false  # To prevent animation conflict during an attack
 
 
 
-
+func jump():
+	velocity.y = jump_force
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hexcfdvec5ol"]
+[gd_scene load_steps=22 format=3 uid="uid://hexcfdvec5ol"]
 
 [ext_resource type="PackedScene" uid="uid://c42mcf68enpj6" path="res://terrain/terrain.tscn" id="2_m16sl"]
 [ext_resource type="Script" path="res://game_manager.gd" id="7_m7kkd"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bjq4fekauhk0f" path="res://scenes/point_light_2d.tscn" id="9_nb5us"]
 [ext_resource type="Texture2D" uid="uid://bwiidh37clkrm" path="res://PNG/Idle.png" id="10_55tdd"]
 [ext_resource type="PackedScene" uid="uid://ckokj37gq5g5p" path="res://helpers/actionables.tscn" id="11_nyaxm"]
+[ext_resource type="Texture2D" uid="uid://biyt2yjxg667v" path="res://assets/iconsx3.png" id="11_r6cfk"]
 [ext_resource type="PackedScene" uid="uid://cwpdi23vydrpl" path="res://scenes/portal.tscn" id="12_b5eie"]
 [ext_resource type="Resource" uid="uid://ck0dwa3067s6r" path="res://assets/dialogues/main.dialogue" id="12_r2wmo"]
 [ext_resource type="PackedScene" uid="uid://bactfrthimlfa" path="res://scenes/character_body_2d.tscn" id="13_bn5n8"]
+[ext_resource type="PackedScene" uid="uid://df1qsopjvpjas" path="res://scenes/enemy.tscn" id="13_ejfx1"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="14_uddjy"]
 [ext_resource type="PackedScene" uid="uid://dr5tc7kusiv2p" path="res://scenes/pause.tscn" id="15_kl67o"]
 
@@ -126,10 +128,6 @@ theme_override_font_sizes/font_size = 50
 text = "HOLD 'SHIFT' TO RUN
 "
 
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("7_m7kkd")
-
 [node name="Shards of lumaria" type="Node" parent="."]
 
 [node name="collectible ( shards of lumaria)" parent="Shards of lumaria" instance=ExtResource("8_78i0s")]
@@ -195,7 +193,7 @@ position = Vector2(1840, 539)
 shape = SubResource("CircleShape2D_i6rt2")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("13_bn5n8")]
-position = Vector2(107, 494)
+position = Vector2(137, 493)
 scale = Vector2(0.330982, 0.330982)
 script = ExtResource("14_uddjy")
 
@@ -216,6 +214,7 @@ position = Vector2(75.5328, 54.3837)
 [node name="pausecanvas" type="CanvasLayer" parent="."]
 
 [node name="pausenode" parent="pausecanvas" instance=ExtResource("15_kl67o")]
+texture_filter = 1
 anchors_preset = -1
 anchor_left = -0.253
 anchor_top = 0.603
@@ -230,6 +229,60 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
+[node name="Hearts" type="Panel" parent="pausecanvas"]
+offset_left = 830.0
+offset_top = 44.0
+offset_right = 1119.0
+offset_bottom = 88.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pausecanvas/Hearts"]
+layout_mode = 0
+offset_left = 9.0
+offset_right = 280.0
+offset_bottom = 42.0
+
+[node name="Heart" type="TextureRect" parent="pausecanvas/Hearts/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_r6cfk")
+
+[node name="Heart2" type="TextureRect" parent="pausecanvas/Hearts/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_r6cfk")
+
+[node name="Heart3" type="TextureRect" parent="pausecanvas/Hearts/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_r6cfk")
+
+[node name="Heart4" type="TextureRect" parent="pausecanvas/Hearts/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_r6cfk")
+
+[node name="Heart5" type="TextureRect" parent="pausecanvas/Hearts/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_r6cfk")
+
 [node name="portals" type="Node" parent="."]
 
 [node name="portal 1" parent="portals" instance=ExtResource("12_b5eie")]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="enemy" parent="Enemies" instance=ExtResource("13_ejfx1")]
+position = Vector2(720, 520)
+
+[node name="enemy2" parent="Enemies" instance=ExtResource("13_ejfx1")]
+position = Vector2(1243, 523)
+
+[node name="enemy3" parent="Enemies" instance=ExtResource("13_ejfx1")]
+position = Vector2(1957, 491)
+
+[node name="enemy4" parent="Enemies" instance=ExtResource("13_ejfx1")]
+position = Vector2(3430, 522)
+
+[node name="enemy5" parent="Enemies" instance=ExtResource("13_ejfx1")]
+position = Vector2(2941, 395)
+
+[node name="Game_Manager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("7_m7kkd")
+hearts = [NodePath("../pausecanvas/Hearts/HBoxContainer/Heart"), NodePath("../pausecanvas/Hearts/HBoxContainer/Heart2"), NodePath("../pausecanvas/Hearts/HBoxContainer/Heart3"), NodePath("../pausecanvas/Hearts/HBoxContainer/Heart4"), NodePath("../pausecanvas/Hearts/HBoxContainer/Heart5")]
