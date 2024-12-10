@@ -400,6 +400,11 @@ animations = [{
 "name": &"hovering",
 "speed": 8.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_en122")
@@ -554,7 +559,7 @@ texture_filter = 1
 position = Vector2(66, 17)
 scale = Vector2(2.02344, 2.02344)
 sprite_frames = SubResource("SpriteFrames_asm46")
-animation = &"hovering"
+animation = &"hurt"
 autoplay = "idle"
 metadata/_edit_group_ = true
 
