@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3y3rfanx6hs1"]
+[gd_scene load_steps=2 format=3 uid="uid://cyptjbsh780f"]
 
 [ext_resource type="Script" path="res://gameover.gd" id="1_scdm7"]
 
@@ -47,3 +47,6 @@ offset_top = 172.0
 offset_right = 641.0
 offset_bottom = 256.0
 text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

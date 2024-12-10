@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0rty5tonmfee" path="res://scenes/shards_of_lumaria.tscn" id="8_78i0s"]
 [ext_resource type="PackedScene" uid="uid://bjq4fekauhk0f" path="res://scenes/point_light_2d.tscn" id="9_nb5us"]
 [ext_resource type="Texture2D" uid="uid://bwiidh37clkrm" path="res://PNG/Idle.png" id="10_55tdd"]
-[ext_resource type="PackedScene" uid="uid://b3y3rfanx6hs1" path="res://gameover.tscn" id="11_0fcka"]
+[ext_resource type="PackedScene" uid="uid://cyptjbsh780f" path="res://gameover.tscn" id="11_0fcka"]
 [ext_resource type="PackedScene" uid="uid://ckokj37gq5g5p" path="res://helpers/actionables.tscn" id="11_nyaxm"]
 [ext_resource type="Texture2D" uid="uid://biyt2yjxg667v" path="res://assets/iconsx3.png" id="11_r6cfk"]
 [ext_resource type="PackedScene" uid="uid://cwpdi23vydrpl" path="res://scenes/portal.tscn" id="12_b5eie"]
