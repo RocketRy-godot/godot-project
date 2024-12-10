@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cv0it7tndfwfd"]
+
+[node name="Transition" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.46391, 0.115626, 0.635788, 1)

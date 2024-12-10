@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://kedyk0vhw23e"]
+
+[ext_resource type="VideoStream" path="res://PNG/Lumaria OGV with subs.ogv" id="1_8tstp"]
+[ext_resource type="Script" path="res://scenes/entrance_vid.gd" id="1_m8db0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_m8db0")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -950.0
+offset_top = -550.0
+offset_right = 970.0
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_8tstp")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="VideoStreamPlayer"]
+position = Vector2(950, 550)
+zoom = Vector2(0.6, 0.5)
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

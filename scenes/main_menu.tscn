@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dwq1ocewfi113"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_iy2e5"]
+[ext_resource type="Texture2D" uid="uid://bcfv1d2yfk3un" path="res://PNG/Main Menu the real one.jpg" id="2_76ied"]
 [ext_resource type="FontFile" uid="uid://dnxe2p7vu4sg6" path="res://assets/Fonts/unzialish/UnZialish.ttf" id="2_453s4"]
-[ext_resource type="Texture2D" uid="uid://ir5r3shs2fte" path="res://PNG/Main menu the real one.png" id="2_hsoqa"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_buep1"]
-texture = ExtResource("2_hsoqa")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwyhf"]
+texture = ExtResource("2_76ied")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_irp0s"]
 
@@ -45,7 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_buep1")
+theme_override_styles/panel = SubResource("StyleBoxTexture_fwyhf")
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 2
@@ -63,27 +63,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_u85j8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g8126")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g8126")
 text = "Start Game"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -453.0
-offset_top = -173.0
-offset_right = 487.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.998846, 0.918884, 0.849947, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("2_453s4")
-theme_override_font_sizes/font_size = 93
-text = "Veil of Shadows"
-uppercase = true
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1

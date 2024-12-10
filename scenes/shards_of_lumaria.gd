@@ -1,3 +1,13 @@
 extends Area2D
 
-@onready var game_manager: Node = $/root/Node/Game_Manager
+@onready var game_manager: Node = %Game_Manager
+
+
+
+
+
+
+func _on_body_entered(body):
+	if (body.name == "CharacterBody2D"):
+		queue_free()
+		game_manager.add_point()
