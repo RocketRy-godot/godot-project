@@ -20,7 +20,21 @@ var is_attacking := false  # To prevent animation conflict during an attack
 @onready var landingsound = $landingsound
 
 
+func attack():
+	if is_attacking:  # Prevent starting a new attack if already attacking
+		return
+	
+	is_attacking = true
+	sprite_2d.animation = "attack"  # Replace with the name of your attack animation
+	$attack_sound.play()  # Optional: Play attack sound if applicable
 
+	# Correctly connect the "animation_finished" signal to the handler
+	sprite_2d.connect("animation_finished", Callable(self, "_on_attack_finished"))
+func _on_attack_finished():
+	if sprite_2d.animation == "attack":  # Ensure it's the attack animation
+		is_attacking = false  # Reset attacking state
+		# Disconnect the signal using the callable reference
+		sprite_2d.disconnect("animation_finished", Callable(self, "_on_attack_finished"))
 
 func jump():
 	velocity.y = jump_force
@@ -109,6 +123,7 @@ func _physics_process(delta):
 	
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
+	
 func _process(delta):
 	# Check for interaction input
 	if Input.is_action_just_pressed("interact"):
@@ -118,9 +133,3 @@ func _process(delta):
 			return
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
-
-		
-		
-
-
-		

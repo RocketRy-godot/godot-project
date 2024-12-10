@@ -18,7 +18,6 @@ func pause():
 
 func testEsc():
 	if Input.is_action_just_pressed('esc') and get_tree().paused == false:
-		process_mode
 		pause()
 		
 		
@@ -27,7 +26,7 @@ func testEsc():
 	elif Input.is_action_just_pressed('esc') and get_tree().paused == true:
 		resume()
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
-		Input.mouse_mode
+		
 	
 		
 		

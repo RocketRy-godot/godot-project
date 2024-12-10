@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://hexcfdvec5ol"]
+[gd_scene load_steps=23 format=3 uid="uid://hexcfdvec5ol"]
 
 [ext_resource type="PackedScene" uid="uid://c42mcf68enpj6" path="res://terrain/terrain.tscn" id="2_m16sl"]
 [ext_resource type="Script" path="res://game_manager.gd" id="7_m7kkd"]
 [ext_resource type="PackedScene" uid="uid://c0rty5tonmfee" path="res://scenes/shards_of_lumaria.tscn" id="8_78i0s"]
 [ext_resource type="PackedScene" uid="uid://bjq4fekauhk0f" path="res://scenes/point_light_2d.tscn" id="9_nb5us"]
 [ext_resource type="Texture2D" uid="uid://bwiidh37clkrm" path="res://PNG/Idle.png" id="10_55tdd"]
+[ext_resource type="Texture2D" uid="uid://by4p3gmrry24a" path="res://ding.png" id="11_bri3o"]
 [ext_resource type="PackedScene" uid="uid://ckokj37gq5g5p" path="res://helpers/actionables.tscn" id="11_nyaxm"]
 [ext_resource type="Texture2D" uid="uid://biyt2yjxg667v" path="res://assets/iconsx3.png" id="11_r6cfk"]
 [ext_resource type="PackedScene" uid="uid://cwpdi23vydrpl" path="res://scenes/portal.tscn" id="12_b5eie"]
@@ -83,9 +84,9 @@ radius = 145.287
 
 [node name="VBoxContainer" type="VBoxContainer" parent="tutorials"]
 offset_left = 157.0
-offset_top = 415.0
-offset_right = 811.0
-offset_bottom = 703.0
+offset_top = 397.0
+offset_right = 922.0
+offset_bottom = 745.0
 scale = Vector2(0.29938, 0.29938)
 
 [node name="Label" type="Label" parent="tutorials/VBoxContainer"]
@@ -260,6 +261,11 @@ texture = ExtResource("11_r6cfk")
 [node name="Heart5" type="TextureRect" parent="pausecanvas/Hearts/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("11_r6cfk")
+
+[node name="Ding" type="Sprite2D" parent="pausecanvas"]
+position = Vector2(975, 66.5)
+scale = Vector2(0.87931, 0.215517)
+texture = ExtResource("11_bri3o")
 
 [node name="portals" type="Node" parent="."]
 
