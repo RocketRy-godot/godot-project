@@ -12,8 +12,9 @@ func decrease_health():
 			hearts[h].show()
 		else:
 			hearts[h].hide()
-	if (lives == 0):
-		get_tree().reload_current_scene()
+	if lives == 0:
+		$Gameover.visible = true
+		get_tree().paused == true
 
 func add_point():
 	points += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://hexcfdvec5ol"]
+[gd_scene load_steps=25 format=3 uid="uid://hexcfdvec5ol"]
 
 [ext_resource type="PackedScene" uid="uid://c42mcf68enpj6" path="res://terrain/terrain.tscn" id="2_m16sl"]
 [ext_resource type="Script" path="res://game_manager.gd" id="7_m7kkd"]
@@ -76,6 +76,22 @@ radius = 63.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhtgv"]
 radius = 145.287
+
+[sub_resource type="GDScript" id="GDScript_jj3e8"]
+script/source = "extends Control
+
+
+
+
+
+@onready var game_manager: Node = %Game_Manager
+func gameove():
+	if game_manager.lives == 0:
+		self.visibie = true
+func _ready():
+	self.visible = false
+		
+"
 
 [node name="Node" type="Node"]
 
@@ -260,6 +276,13 @@ texture = ExtResource("11_r6cfk")
 layout_mode = 2
 texture = ExtResource("11_r6cfk")
 
+[node name="Gameover" parent="pausecanvas" instance=ExtResource("11_0fcka")]
+script = SubResource("GDScript_jj3e8")
+
+[node name="portals" type="Node" parent="pausecanvas/Gameover"]
+
+[node name="portal 1" parent="pausecanvas/Gameover/portals" instance=ExtResource("12_b5eie")]
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="enemy" parent="Enemies" instance=ExtResource("13_ejfx1")]
@@ -276,6 +299,11 @@ position = Vector2(3430, 522)
 
 [node name="enemy5" parent="Enemies" instance=ExtResource("13_ejfx1")]
 position = Vector2(2941, 395)
+
+[node name="Game_Manager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("7_m7kkd")
+hearts = [NodePath("../pausecanvas/Hearts/HBoxContainer/Heart"), NodePath("../pausecanvas/Hearts/HBoxContainer/Heart2"), NodePath("../pausecanvas/Hearts/HBoxContainer/Heart3"), NodePath("../pausecanvas/Hearts/HBoxContainer/Heart4"), NodePath("../pausecanvas/Hearts/HBoxContainer/Heart5")]
 
 [node name="Label5" type="Label" parent="."]
 offset_left = 626.0
@@ -335,23 +363,3 @@ position = Vector2(1052, 424)
 rotation = 0.959931
 scale = Vector2(0.0800943, 0.101213)
 texture = ExtResource("14_dkddo")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Game_Manager" type="Node" parent="CanvasLayer" node_paths=PackedStringArray("hearts")]
-unique_name_in_owner = true
-script = ExtResource("7_m7kkd")
-hearts = [NodePath("../../pausecanvas/Hearts/HBoxContainer/Heart"), NodePath("../../pausecanvas/Hearts/HBoxContainer/Heart2"), NodePath("../../pausecanvas/Hearts/HBoxContainer/Heart3"), NodePath("../../pausecanvas/Hearts/HBoxContainer/Heart4"), NodePath("../../pausecanvas/Hearts/HBoxContainer/Heart5")]
-
-[node name="Gameover" parent="CanvasLayer/Game_Manager" instance=ExtResource("11_0fcka")]
-anchor_top = 0.784
-anchor_right = 0.657
-anchor_bottom = 1.744
-offset_left = 43.0
-offset_top = -244.016
-offset_right = 0.135986
-offset_bottom = -213.056
-
-[node name="portals" type="Node" parent="."]
-
-[node name="portal 1" parent="portals" instance=ExtResource("12_b5eie")]

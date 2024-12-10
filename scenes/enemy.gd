@@ -9,7 +9,8 @@ func _process(delta):
 	pass
 
 @onready var player = $/root/Node/CharacterBody2D 
-@onready var game_manager = $/root/Node/Game_Manager
+
+@onready var game_manager: Node = %Game_Manager
 
 	
 
