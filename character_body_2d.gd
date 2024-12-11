@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var walk_speed := 100
 var run_speed := 230
-var gravity := 1000
+var gravity := 900
 var jump_force := -500
 var jump_cut_off_speed := -200  # Speed when jump transition to falling starts
 var max_fall_speed := 400  # Max speed for falling
@@ -42,8 +42,7 @@ func jump():
 
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed('test'):
-		$HealthComponent.damage(1)
+	
 	# Apply gravity
 	if !is_on_floor():
 		self.velocity.y += gravity * delta
@@ -124,7 +123,7 @@ func _physics_process(delta):
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
 	
-func _process(delta):
+func _process(_delta):
 	# Check for interaction input
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()

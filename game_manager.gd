@@ -1,5 +1,7 @@
 extends Node
 @onready var character_body_2d: CharacterBody2D = $"../../CharacterBody2D"
+@onready var label: Label = $"../../pausecanvas/Shards/HBoxContainer/Label"
+ 
 
 @export var hearts : Array[Node]
 var points=0
@@ -21,4 +23,3 @@ func decrease_health():
 
 func add_point():
 	points += 1
-	print(points)

@@ -558,17 +558,10 @@ var health : float
 
 
 
-func _ready():
-	health = MAX_HEALTH
-	$CanvasLayer/Label.text = str(health) + 'HP'
 
 	
 
-func damage(attack):
-	health -= attack
-	$CanvasLayer/Label.text = str(health) + 'HP'
-	if health <= 0:
-		get_parent().queue_free()
+	
 "
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -631,16 +624,3 @@ script = SubResource("GDScript_25sbm")
 script = SubResource("GDScript_u7sfk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="HealthComponent"]
-
-[node name="Label" type="Label" parent="HealthComponent/CanvasLayer"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -54.0
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 0
-grow_vertical = 2
-text = "100 HP"
