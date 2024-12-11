@@ -42,8 +42,7 @@ func _on_resume_pressed():
 
 
 func _on_quit_pressed():
-	Transition.transition()
-	await Transition.on_transition_finished
+
 	get_tree().quit()
 
 func _process(_gigachad):

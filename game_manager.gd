@@ -1,4 +1,5 @@
 extends Node
+@onready var character_body_2d: CharacterBody2D = $"../../CharacterBody2D"
 
 @export var hearts : Array[Node]
 var points=0
@@ -13,8 +14,10 @@ func decrease_health():
 		else:
 			hearts[h].hide()
 	if lives == 0:
-		$Gameover.visible = true
 		get_tree().paused == true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		character_body_2d.queue_free()
+		$Gameover.visible = true
 
 func add_point():
 	points += 1
